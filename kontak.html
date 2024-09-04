@@ -4,40 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Kontak</title>
+    <style>
+        /* CSS untuk styling halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2>Hubungi Kami</h2>
-    <form action="proses_form.php" method="POST">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
-        <br><br>
+    <div class="container">
+        <h2>Hubungi Kami</h2>
+        <form action="proses_form.php" method="POST">
+            <!-- Form field untuk nama -->
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+            <!-- Form field untuk email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label>Jenis Pesan:</label>
-        <input type="radio" id="pertanyaan" name="jenis_pesan" value="Pertanyaan" required>
-        <label for="pertanyaan">Pertanyaan</label>
-        <input type="radio" id="masukan" name="jenis_pesan" value="Masukan" required>
-        <label for="masukan">Masukan</label>
-        <input type="radio" id="lainnya" name="jenis_pesan" value="Lainnya" required>
-        <label for="lainnya">Lainnya</label>
-        <br><br>
+            <!-- Pilihan untuk jenis pesan -->
+            <label>Jenis Pesan:</label>
+            <input type="radio" id="pertanyaan" name="jenis_pesan" value="Pertanyaan" required>
+            <label for="pertanyaan">Pertanyaan</label>
+            <input type="radio" id="masukan" name="jenis_pesan" value="Masukan" required>
+            <label for="masukan">Masukan</label>
+            <input type="radio" id="lainnya" name="jenis_pesan" value="Lainnya" required>
+            <label for="lainnya">Lainnya</label>
 
-        <label for="kelas">Kelas:</label>
-        <select id="kelas" name="kelas" required>
-            <option value="T1H">T1H</option>
-            <option value="T2H">T2H</option>
-            <option value="T3H">T3H</option>
-        </select>
-        <br><br>
+            <!-- Dropdown untuk kelas -->
+            <label for="kelas">Kelas:</label>
+            <select id="kelas" name="kelas" required>
+                <option value="T1H">T1H</option>
+                <option value="T2H">T2H</option>
+                <option value="T3H">T3H</option>
+            </select>
 
-        <label for="pesan">Pesan:</label>
-        <textarea id="pesan" name="pesan" rows="4" required></textarea>
-        <br><br>
+            <!-- Form field untuk pesan -->
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" name="pesan" rows="4" required></textarea>
 
-        <input type="submit" value="Kirim">
-    </form>
+            <!-- Tombol kirim -->
+            <input type="submit" value="Kirim">
+        </form>
+    </div>
 </body>
 </html>
