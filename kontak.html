@@ -5,45 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Kontak</title>
     <style>
-        /* CSS untuk styling halaman */
+        /* CSS untuk mempercantik tampilan form */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 20px;
         }
         .container {
             max-width: 500px;
             margin: auto;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
         }
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
         }
-        input[type="text"], input[type="email"], textarea, select {
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0 15px 0;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 16px;
         }
         input[type="radio"] {
-            margin-right: 5px;
+            margin-right: 10px;
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
         }
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 15px;
+            padding: 14px 25px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
+            display: block;
+            width: 100%;
         }
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+        /* Tambahan untuk responsif */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            input[type="submit"] {
+                padding: 12px 20px;
+            }
         }
     </style>
 </head>
@@ -51,36 +83,34 @@
     <div class="container">
         <h2>Hubungi Kami</h2>
         <form action="proses_form.php" method="POST">
-            <!-- Form field untuk nama -->
             <label for="nama">Nama:</label>
             <input type="text" id="nama" name="nama" required>
-
-            <!-- Form field untuk email -->
+    
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
-            <!-- Pilihan untuk jenis pesan -->
+    
             <label>Jenis Pesan:</label>
-            <input type="radio" id="pertanyaan" name="jenis_pesan" value="Pertanyaan" required>
-            <label for="pertanyaan">Pertanyaan</label>
-            <input type="radio" id="masukan" name="jenis_pesan" value="Masukan" required>
-            <label for="masukan">Masukan</label>
-            <input type="radio" id="lainnya" name="jenis_pesan" value="Lainnya" required>
-            <label for="lainnya">Lainnya</label>
-
-            <!-- Dropdown untuk kelas -->
+            <div class="radio-group">
+                <input type="radio" id="pertanyaan" name="jenis_pesan" value="Pertanyaan" required>
+                <label for="pertanyaan">Pertanyaan</label>
+    
+                <input type="radio" id="masukan" name="jenis_pesan" value="Masukan" required>
+                <label for="masukan">Masukan</label>
+    
+                <input type="radio" id="lainnya" name="jenis_pesan" value="Lainnya" required>
+                <label for="lainnya">Lainnya</label>
+            </div>
+    
             <label for="kelas">Kelas:</label>
             <select id="kelas" name="kelas" required>
                 <option value="T1H">T1H</option>
                 <option value="T2H">T2H</option>
                 <option value="T3H">T3H</option>
             </select>
-
-            <!-- Form field untuk pesan -->
+    
             <label for="pesan">Pesan:</label>
             <textarea id="pesan" name="pesan" rows="4" required></textarea>
-
-            <!-- Tombol kirim -->
+    
             <input type="submit" value="Kirim">
         </form>
     </div>
